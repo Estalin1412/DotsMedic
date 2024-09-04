@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "661379361380",
+    "project_id": "dotsmedicapp",
+    "storage_bucket": "dotsmedicapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661379361380:android:3dc0f8a0732a91bed70d71",
+        "android_client_info": {
+          "package_name": "com.Dmedic.dotsmedic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjY6G7lzgC8db3iUr6aU7jMxT0D3mvTIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

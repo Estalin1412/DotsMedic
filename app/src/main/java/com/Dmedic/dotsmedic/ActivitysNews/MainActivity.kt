@@ -15,6 +15,7 @@ import com.Dmedic.dotsmedic.InterfastDots.DotsActivity
 import com.Dmedic.dotsmedic.InterfastMedicina.MedicinaActivity
 import com.Dmedic.dotsmedic.InterfastSalud.SaludActivity
 import com.Dmedic.dotsmedic.R
+import com.google.firebase.FirebaseApp
 
 class MainActivity : AppCompatActivity() {
     //Para los botones
@@ -54,6 +55,9 @@ class MainActivity : AppCompatActivity() {
         buttonDatos2 = findViewById(R.id.btDatos2)
         buttonMedicina3 = findViewById(R.id.btMedicina3)
         buttonConsulta4 = findViewById(R.id.btConsulta4)
+
+        FirebaseApp.initializeApp(this)
+
     }
 
     private fun InitListenerComponents(){
