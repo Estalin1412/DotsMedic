@@ -63,6 +63,8 @@ class DatosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_datos)
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -80,22 +82,14 @@ class DatosActivity : AppCompatActivity() {
 
     private fun InitComponents(){
 
+
+
         tvDatos = findViewById(R.id.tvDatos)
         FirebaseApp.initializeApp(this)
 
         //Inicializar el recyclerView
         rvDatosGenerales = findViewById(R.id.rvPartDatosGenerales)
-        //Conexion MQTT
-        /*
-        MQTT.ConnectMQTT(object : MQTTListener{
-            override fun onSuccess(){
-                Toast.makeText(applicationContext, "Conectado!!", Toast.LENGTH_SHORT).show()
-            }
-            override fun onFailure(){
-                Toast.makeText(applicationContext, "No está conectado...",Toast.LENGTH_SHORT).show()
-            }
-        })
-*/
+
 
 
     }
@@ -120,6 +114,24 @@ class DatosActivity : AppCompatActivity() {
                 Log.w("TAG", "Failed to read value.", error.toException())
             }
         })
+
+        //PARA MQTT
+        /*
+        MQTT.ConnectMQTT(object : MQTTListener{
+            override fun onSuccess(){
+                runOnUiThread {
+                    Toast.makeText(applicationContext, "Conectado!!", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(){
+                runOnUiThread {
+                    Toast.makeText(applicationContext, "No está conectado...", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        })
+        */
+
 
     }
     private fun initUI(){

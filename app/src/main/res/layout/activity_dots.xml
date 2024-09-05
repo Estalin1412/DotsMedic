@@ -9,22 +9,101 @@
     android:background="@color/white"
     android:layout_gravity="center"
     >
+    <!-- Título de la Empresa -->
     <TextView
-        android:id="@+id/tvTituloDotsActivity"
+        android:id="@+id/tvCompanyTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:textColor="@color/MarineBlue"
-        android:text="Hola soy Dots ¿En qué podemos ayudarte?"
-        android:textSize="28sp"
+        android:text="Empresa Dots"
+        android:textSize="24sp"
         android:textStyle="bold"
-
-
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
 
-        />
+    <!-- Área DotsLearning -->
+    <TextView
+        android:id="@+id/tvDotsLearningTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DotsLearning"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvCompanyTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
 
+    <TextView
+        android:id="@+id/tvDotsLearningInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="DotsLearning es un área dedicada al aprendizaje interactivo, ofreciendo recursos de aprendizaje modernos y efectivos."
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDotsLearningTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Área DotsActivity -->
+    <TextView
+        android:id="@+id/tvDotsActivityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DotsActivity"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvDotsLearningInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/tvDotsActivityInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="DotsActivity promueve un estilo de vida activo, desarrollando aplicaciones para la gestión de actividades deportivas y monitoreo de bienestar."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvDotsActivityTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Área DotsAerospace -->
+    <TextView
+        android:id="@+id/tvDotsAerospaceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DotsAerospace"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvDotsActivityInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/tvDotsAerospaceInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="DotsAerospace está dedicada a la investigación y desarrollo de tecnologías aeroespaciales para la exploración de nuevas fronteras."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvDotsAerospaceTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

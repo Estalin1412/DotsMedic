@@ -4,7 +4,10 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.jetbrains.kotlin.android) apply false
 
-    //Agregando dependencias para conexion con fireBase
+    //Agregando dependencias para conexion con fireBase------------------------------------
     id("com.google.gms.google-services") version "4.4.2" apply false
+    //Dependencia para crashlytics--------------------------------------------------------
+    // Add the dependency for the Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics") version "2.9.9" apply false
 
 }

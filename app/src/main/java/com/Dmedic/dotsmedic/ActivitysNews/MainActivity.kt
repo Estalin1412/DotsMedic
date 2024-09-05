@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var buttonMedicina3: ImageButton
     lateinit var buttonConsulta4: ImageButton
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Ejecutar funciones
-
         InitComponets()
 
         InitListenerComponents()

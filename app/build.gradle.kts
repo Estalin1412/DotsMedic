@@ -1,9 +1,13 @@
 plugins {
     //Para Agregar google services
     id("com.google.gms.google-services")
+    /*Para crashlytics----------------------------------------------------------------------*/
+    // Add the Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics")
 
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
 }
 
 android {
@@ -47,6 +51,12 @@ dependencies {
     //Para MQTT
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("mx.electronica117:Android-MQTT:1.2")
+    //Para crashlitycs---------------------------------------------------------
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-analytics")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
