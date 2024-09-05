@@ -3,25 +3,49 @@ package com.Dmedic.dotsmedic.InterfastDatos
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.Dmedic.dotsmedic.Clases.ClassDatos
 import com.Dmedic.dotsmedic.Clases.MPU
 import com.Dmedic.dotsmedic.Clases.SensorMPU
 
 import com.Dmedic.dotsmedic.R
+import com.Electronica117_MQTT.electronica117_mqtt.Interfaces.MQTTListener
+import com.Electronica117_MQTT.electronica117_mqtt.MQTT
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
+import com.google.gson.Gson
 
 
 class DatosActivity : AppCompatActivity() {
+
+    /*-----------------PARA CONEXION MQTT----------------------------------------*/
+
+
+    /*PARA DATOS GENERALES--------------------------------------------------------------------*/
+    //Listado de datos anteriores
+    private val datosGenerales = listOf(
+        ObjetosDatosGenerales.datoGeneral1,
+        ObjetosDatosGenerales.datoGeneral2,
+        ObjetosDatosGenerales.datoGeneral3,
+        ObjetosDatosGenerales.datoGeneral4,
+        ObjetosDatosGenerales.datoGeneral5,
+
+    )
+
+    //Recycler view task
+    private lateinit var rvDatosGenerales: RecyclerView
+    private lateinit var objetosGeneralesAdapter: ObjetosDatosGenerales_adapter
 
     /*----------------------------------------Declaracion de variable-----------------------------*/
     //Variable el vizualizador
@@ -47,6 +71,7 @@ class DatosActivity : AppCompatActivity() {
 
         InitComponents()
         ListenerComponents()
+        initUI()
 
     }
 
@@ -58,10 +83,24 @@ class DatosActivity : AppCompatActivity() {
         tvDatos = findViewById(R.id.tvDatos)
         FirebaseApp.initializeApp(this)
 
+        //Inicializar el recyclerView
+        rvDatosGenerales = findViewById(R.id.rvPartDatosGenerales)
+        //Conexion MQTT
+        /*
+        MQTT.ConnectMQTT(object : MQTTListener{
+            override fun onSuccess(){
+                Toast.makeText(applicationContext, "Conectado!!", Toast.LENGTH_SHORT).show()
+            }
+            override fun onFailure(){
+                Toast.makeText(applicationContext, "No está conectado...",Toast.LENGTH_SHORT).show()
+            }
+        })
+*/
+
 
     }
     private fun ListenerComponents(){
-
+        //Para guardar medida en base de  datos fire base
         myRef.setValue(medidas)
 
 
@@ -69,9 +108,12 @@ class DatosActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 //Para obtener datos de base de datos
                 val value = snapshot.getValue(ClassDatos::class.java)
+                //Part73: Para que si cambies la base de datos tambien se cambie el text view
+                val gson = Gson()
+                val myJsonStr = gson.toJson(value)
 
                 //Para cambiar el texto del textView
-                tvDatos.setText(value?.Temperatura.toString())
+                tvDatos.setText(myJsonStr/*value?.Humedad.toString()*/)
             }
 
             override fun onCancelled(error: DatabaseError){
@@ -79,5 +121,11 @@ class DatosActivity : AppCompatActivity() {
             }
         })
 
+    }
+    private fun initUI(){
+        //Para mostrar los datos en pantalla con el recyclerview
+        objetosGeneralesAdapter = ObjetosDatosGenerales_adapter(datosGenerales)
+        rvDatosGenerales.layoutManager = LinearLayoutManager(this , LinearLayoutManager.VERTICAL, false)
+        rvDatosGenerales.adapter = objetosGeneralesAdapter
     }
 }

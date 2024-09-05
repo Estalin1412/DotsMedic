@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="260dp"
+    android:layout_height="64dp"
+
+    android:id="@+id/rvPartDatosGenerales"
+
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginTop="16dp"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDatoGeneral0"
+        android:layout_width="128dp"
+        android:layout_height="64dp"
+
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/MarineBlue"
+        android:layout_marginEnd="4dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+            >
+                <TextView
+                    android:id="@+id/tvNameDato0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prueba"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
+                <View
+                    android:id="@+id/vDivider0"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                >
+                <TextView
+                    android:id="@+id/tvValorDato0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:text="dato"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:id="@+id/tvUnidadMedidaDato0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="[medida]"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDatoGeneral"
+        android:layout_width="128dp"
+        android:layout_height="64dp"
+
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/MarineBlue"
+        android:layout_marginEnd="4dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:id="@+id/tvNameDato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prueba"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
+                <View
+                    android:id="@+id/vDivider"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                >
+                <TextView
+                    android:id="@+id/tvValorDato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:text="dato"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:id="@+id/tvUnidadMedidaDato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="[medida]"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

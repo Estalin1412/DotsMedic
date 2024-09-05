@@ -9,6 +9,7 @@ class ClassDatos(
     constructor():this(0.0,0.0," ", MPU())
 
     /*
+    //Si fuera un constructor con atributos privados
     public fun getHumedad(): Double{
         return Humedad
     }
