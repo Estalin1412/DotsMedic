@@ -39,14 +39,27 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/tvDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dots"
+        android:textColor="@color/MarineBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blDots"
+        />
     <RelativeLayout
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:id="@+id/blSalud"
         android:layout_width="150dp"
         android:layout_height="150dp"
 
 
-        app:layout_constraintTop_toBottomOf="@+id/blDots"
+        app:layout_constraintTop_toBottomOf="@+id/tvDots"
         app:layout_constraintEnd_toStartOf="@+id/blDatos"
         app:layout_constraintStart_toStartOf="parent"
 
@@ -63,14 +76,28 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/tvSalud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salud"
+        android:textColor="@color/MarineBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blSalud"
+        app:layout_constraintBottom_toTopOf="@+id/blMedicina"
+        app:layout_constraintEnd_toStartOf="@+id/tvDatos"
+        />
     <RelativeLayout
         android:id="@+id/blDatos"
         android:layout_width="150dp"
         android:layout_height="150dp"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
 
-        app:layout_constraintTop_toBottomOf="@+id/blDots"
+        app:layout_constraintTop_toBottomOf="@+id/tvDots"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/blSalud"
 
@@ -87,6 +114,21 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/tvDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos"
+        android:textColor="@color/MarineBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvSalud"
+        app:layout_constraintTop_toBottomOf="@+id/blDatos"
+        app:layout_constraintBottom_toTopOf="@+id/blConsulta"
+        />
+
     <RelativeLayout
         android:id="@+id/blMedicina"
         android:layout_width="150dp"
@@ -95,7 +137,7 @@
         android:layout_marginTop="16dp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blSalud"
+        app:layout_constraintTop_toBottomOf="@+id/tvSalud"
         app:layout_constraintEnd_toStartOf="@+id/blConsulta"
 
         >
@@ -111,6 +153,19 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/tvMedicina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tratamiento"
+        android:textColor="@color/MarineBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toStartOf="@id/tvConsulta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blMedicina"
+        />
     <RelativeLayout
         android:id="@+id/blConsulta"
         android:layout_width="150dp"
@@ -119,7 +174,7 @@
         android:layout_marginTop="16dp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blDatos"
+        app:layout_constraintTop_toBottomOf="@+id/tvDatos"
         app:layout_constraintStart_toEndOf="@+id/blMedicina"
 
         >
@@ -135,6 +190,18 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/tvConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consultar"
+        android:textColor="@color/MarineBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
+        app:layout_constraintStart_toEndOf="@id/tvMedicina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blConsulta"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
